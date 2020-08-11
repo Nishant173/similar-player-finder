@@ -1,0 +1,8 @@
+variable,value,description
+player,Robert Lewandowski,Name of player (as mentioned in the data files)
+team,Bayern Munich,Team of player (as mentioned in the data files)
+skill,Overall,"Skill-type to use to find similar players. Options: ['Overall', 'Possession', 'Shooting', 'Passing', 'ChanceCreation', 'DefensiveWork']"
+num_results,20,Number of similar players to search for
+"		",,
+,,"		NOTE: Only change the entries in the 'value' column; nothing else"
+,,"		NOTE: Do not change the name of this CSV file"
