@@ -7,6 +7,26 @@ import extract
 import settings
 
 
+def save_to_csv(data, filepath):
+    if str(filepath).strip().lower()[-4:] != '.csv':
+        filepath = str(filepath) + '.csv'
+    data.to_csv(path_or_buf=filepath,
+                sep=',',
+                encoding='utf-8',
+                index=False)
+    return None
+
+
+def get_player_data_by_subset(players):
+    """ Gets DataFrame of player-data based on list of player-names given """
+    data_players = extract.read_players_data()
+    data_by_player_subset = pd.DataFrame()
+    for player in players:
+        df_temp = data_players[data_players['player'] == player]
+        data_by_player_subset = pd.concat(objs=[data_by_player_subset, df_temp], ignore_index=True, sort=False)
+    return data_by_player_subset
+
+
 def drop_player_duplicates(data_players):
     """ Drops duplicates from 'player' column in DataFrame, and returns resulting DataFrame """
     if 'player' not in data_players.columns:

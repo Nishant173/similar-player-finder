@@ -10,7 +10,7 @@ def read_players_data():
 
 
 def read_player_feature_columns():
-    return utils.pickle_load(filename="../pickle/player_feature_columns.pkl")
+    return utils.pickle_load(filename="../data_pickled/player_feature_columns.pkl")
 
 
 def read_user_input():
