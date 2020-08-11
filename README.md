@@ -17,4 +17,4 @@ Finds similar players based on particular stats of given player
 ```
 - Feed your inputs at `inputs/user_inputs.csv`. Use precise names for players/teams.
 - Create a folder called `results` in the root directory, if you don't already have one.
-- Run the script using `cd src` followed by `python run.py`
+- Run the script using `cd src` followed by `python run.py`. Your results will be loaded into the `results` folder in the root directory.
