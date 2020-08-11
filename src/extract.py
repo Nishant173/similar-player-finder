@@ -15,7 +15,9 @@ def read_player_feature_columns():
 
 def read_user_input():
     """ Gets user input regarding which data is to be fetched """
-    data_inputs = pd.read_csv(filepath_or_buffer="../inputs/user_inputs.csv", sep=',')
+    data_inputs = pd.read_csv(filepath_or_buffer="../inputs/user_inputs.csv",
+                              sep=',',
+                              encoding='latin-1')
     data_inputs.dropna(inplace=True)
     dictionary_user_inputs = data_inputs.set_index(keys='variable').to_dict()['value']
     return dictionary_user_inputs
