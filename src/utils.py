@@ -1,3 +1,4 @@
+import os
 import time
 import warnings
 import joblib
@@ -5,6 +6,14 @@ import numpy as np
 import pandas as pd
 import extract
 import settings
+
+
+def create_results_folder():    
+    try:
+        os.mkdir(settings.PATH_RESULTS_DIR)
+    except FileExistsError:
+        pass
+    return None
 
 
 def save_to_csv(data, filepath):

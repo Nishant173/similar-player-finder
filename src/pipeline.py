@@ -1,4 +1,5 @@
 import extract
+import settings
 import transform
 import utils
 
@@ -23,7 +24,8 @@ def execute_pipeline():
 
     # Load
     utils.save_to_csv(data=df_similar_players,
-                      filepath=f"../results/{player} - Similar players ({skill}).csv")
+                      filepath=f"{settings.PATH_RESULTS_DIR}/{player} - Similar players ({skill}).csv")
     utils.save_to_csv(data=df_player_stats_subset,
-                      filepath=f"../results/{player} - Similar players' stats ({skill}).csv")
+                      filepath=f"{settings.PATH_RESULTS_DIR}/{player} - Similar players' stats ({skill}).csv")
+    print(f"Results saved at '{settings.PATH_RESULTS_DIR}'")
     return None

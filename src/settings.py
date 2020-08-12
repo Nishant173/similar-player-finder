@@ -1,1 +1,2 @@
+PATH_RESULTS_DIR = '../results'
 PRINT_DETAILS = True
