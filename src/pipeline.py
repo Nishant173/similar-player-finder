@@ -28,5 +28,5 @@ def execute_pipeline():
                       filepath=f"{settings.PATH_RESULTS_DIR}/{player} - Similar players ({skill}).csv")
     utils.save_to_csv(data=df_player_stats_subset,
                       filepath=f"{settings.PATH_RESULTS_DIR}/{player} - Similar players' stats ({skill}).csv")
-    print(f"Results saved at '{settings.PATH_RESULTS_DIR}'")
+    print(f"\nResults have been stored at '{settings.PATH_RESULTS_DIR}'")
     return None
