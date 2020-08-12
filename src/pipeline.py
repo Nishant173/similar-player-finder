@@ -23,6 +23,7 @@ def execute_pipeline():
     df_player_stats_subset = utils.get_player_data_by_subset(players=df_similar_players['player'].tolist())
 
     # Load
+    utils.create_results_folder()
     utils.save_to_csv(data=df_similar_players,
                       filepath=f"{settings.PATH_RESULTS_DIR}/{player} - Similar players ({skill}).csv")
     utils.save_to_csv(data=df_player_stats_subset,
