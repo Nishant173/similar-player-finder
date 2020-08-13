@@ -39,7 +39,7 @@ def get_player_data_by_subset(players):
 def drop_player_duplicates(data_players):
     """ Drops duplicates from 'player' column in DataFrame, and returns resulting DataFrame """
     if 'player' not in data_players.columns:
-        raise ValueError("The 'player' column is missing from the DataFrame. Cannot drop duplicates!")
+        raise KeyError("The 'player' column is missing from the DataFrame. Cannot drop duplicates!")
     data_players.drop_duplicates(subset=['player'], keep='last', inplace=True, ignore_index=True)
     return data_players
 
@@ -57,11 +57,12 @@ def search_player(name):
     data_players['player_lowercase'] = data_players['player'].str.lower()
     data_players_found = data_players[data_players['player_lowercase'].str.contains(name)]
     data_players_found.drop(labels='player_lowercase', axis=1, inplace=True)
+    data_players_found.reset_index(drop=True, inplace=True)
     if data_players_found.empty:
         if settings.PRINT_DETAILS:
             print("No matches found!")
         return pd.DataFrame()
-    return data_players_found.reset_index(drop=True)
+    return data_players_found
 
 
 def pickle_load(filename):
